@@ -1,0 +1,142 @@
+jQuery.noConflict();
+
+jQuery(document).ready(function($){
+
+	var mbulimiResults = new Bloodhound({
+		datumTokenizer: Bloodhound.tokenizers.obj.whitespace('value'),
+		queryTokenizer: Bloodhound.tokenizers.whitespace,
+		remote: {
+			url: lidhu_ajax.lidhu_query_url+'?q=%QUERY',
+			wildcard: '%QUERY'
+		}
+	});
+
+
+	$('#kerko').typeahead(null, {
+	  name: 'mbulimi',
+	  display: 'address',
+	  hint: true,
+  	  highlight: true,
+  	  minLength: 3,
+  	  limit: 50,
+	  source: mbulimiResults,
+	  templates: {
+	    empty: [
+	      '<div class="empty-message">',
+	        'unable to find any results that match the current query',
+	      '</div>'
+	    ].join('\n'),
+	    suggestion: function(data){
+	    		return '<div><strong>'+data.city+'</strong> – '+data.address+'</div>';
+	  		}
+	  }
+	}).on('typeahead:selected', function(obj, selected, name){
+		if(selected.id > 0){
+			//console.log(selected);
+			$(".tt-button").attr('data-id', selected.id);
+		}
+		else {
+			$(".tt-button").attr('data-id', '');
+		}
+	});
+
+	
+
+
+	$('.tt-button').on('click', function(ev) {
+
+		ev.preventDefault();
+
+		//console.log( "Handler for .click() called." );
+		//var address_id = $(".tt-button").data('id');
+		var address_id = $(".tt-button").attr("data-id");
+
+		//console.log(address_id);
+
+		if(!isNaN(address_id)){
+			$.ajax({
+	            type: "POST", // HTTP method POST or GET
+	            url: lidhu_ajax.ajax_url, //Where to make Ajax calls
+	            dataType:"json", // Data type, HTML, json etc.
+	            data:{
+	            		action : 'lidhu_ajax',
+	            		security : lidhu_ajax.check_nonce,
+	            		address_id: address_id
+	                }, //Form variables
+	            success:function(data){
+
+	            	//console.log(data);
+
+            		initialize(data.kordinatax, data.kordinatay );
+
+					var refresh = function() {
+			        	var center = map.getCenter();
+			            google.maps.event.trigger(map, "resize");
+			            map.setCenter(center);
+			        }
+					setTimeout(refresh, 500);
+
+					if(data.lloji == 'FIBERNET'){
+						$("#lloji-img").attr("src", lidhu_ajax.images_url+"/FIBER1.png");
+					}
+					else if(data.lloji == 'CABLENET'){
+						$("#lloji-img").attr("src", lidhu_ajax.images_url+"/CABLE1.png");
+					}
+
+					if(data.statusi == 'green'){
+						$("#qasja-img").attr("src", lidhu_ajax.images_url+"/kaqasje.jpg");
+						$("#qasja-txt").text("KA QASJE");
+					}
+					else if(data.statusi == 'red'){
+						$("#qasja-img").attr("src", lidhu_ajax.images_url+"/skaqasje.jpg");
+						$("#qasja-txt").text("ENDE NUK KEMI QASJE NE KETE PJESE");
+					}
+					else if(data.statusi == 'white'){
+						$("#qasja-img").attr("src", lidhu_ajax.images_url+"/eksistojne.jpg");
+						$("#qasja-txt").text("EKSISTOJNE MUNDESITE TEKNIKE");
+					}
+
+
+
+					$('#d-qyteti').text(data.city);
+					$('#d-lagja').text(data.lagja);
+					$('#d-rruga').text(data.rruga);
+					$('#d-ndertesa').text(data.ndertesa);
+					$('#d-hyrja').text(data.hyrja);
+
+					
+					$('#details').show();
+
+	            },
+	            error:function (xhr, ajaxOptions, thrownError){
+	                console.log(xhr);
+	                console.log(ajaxOptions, thrownError);
+	            }
+	        });
+
+		}
+	});
+
+
+	function initialize(lat, lng) {
+
+		var myLatlng = new google.maps.LatLng(lat, lng);
+		var mapOptions = {
+			zoom: 18,
+			center: myLatlng,
+			mapTypeId: google.maps.MapTypeId.HYBRID
+		};
+		map = new google.maps.Map(document.getElementById('map_canvas'), mapOptions);
+
+		var marker = new google.maps.Marker({
+			position: myLatlng,
+			map: map,
+		});
+
+
+	}
+
+
+
+	
+});
