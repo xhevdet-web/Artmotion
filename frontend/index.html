@@ -10,9 +10,11 @@
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="plugins/slick/slick.css">
         <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-        <link rel="stylesheet" href="css/all.css">
-        <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="css/all.css">  
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="http://threejs.org/examples/js/libs/stats.min.js"></script>
         <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
         <script src="plugins/popper/popper.min.js"></script>
         <script src="plugins/js/bootstrap.min.js"></script>
@@ -25,22 +27,37 @@
             <div class="artmotion_header">
                 <div class="container">
                     <div class="artmotion_header_content">
-                    <div class="icon_header">
-                        <img src="https://artmotion.net/wp-content/uploadimet/2018/11/ext.jpg" alt="Artmotion">
+                    <div class="artmotion_icon">
+                        <img src="https://artmotion.net/wp-content/uploadimet/2018/11/ext.jpg" alt="artmotion_icon">
                     </div>
-                    <div class="artmotion_header_menu_list">
+                    <div class="artmotion_header_menu_list" id="">
                         <ul>
-                            <li><a href="#"> Ballina </a></li>
-                            <li><a href="#">Rreth Nesh </a></li>
-                            <li><a href="#">Tv</a></li>
-                            <li><a href="#">Privat</a></li>
-                            <li><a href="#">Biznes</a></li>
-                            <li><a href="#">Lidhu</a></li>
-                            <li><a href="#">Kontakt</a></li>
-                            <li><a href="#">Media</a></li>
-                            <li><a href="#">Testo Shpejtsin</a></li>
-                            <li><a href="#">My Artmotion</a></li>
+                            <li><a class="toscroll" href="#"> Ballina </a></li>
+                            <li><a class="toscroll" href="#">Rreth Nesh </a></li>
+                            <li><a class="toscroll" href="#">Tv</a></li>
+                            <li><a class="toscroll" href="testbackround.html">Privat</a></li>
+                            <li><a class="toscroll" href="#">Biznes</a></li>
+                            <li><a class="toscroll" href="#">Lidhu</a></li>
+                            <li><a class="toscroll" href="#">Kontakt</a></li>
+                            <li><a class="toscroll" href="#">Media</a></li>
+                            <li><a class="toscroll" href="#">Testo Shpejtsin</a></li>
+                            <li><a class="toscroll" href="#">My Artmotion</a></li>
+                          
+                        
                         </ul>
+                    </div>
+                    <div class="artmotion_hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
                 </div>
             </div>
@@ -48,16 +65,15 @@
         </nav>
         <div class="content_wrapper">
             <section class="banner_layout">
-                <div class="banner_layout_slider">
-                    <img  src="https://artmotion.net/wp-content/uploadimet/2021/06/LIGA-UNIKE.jpg" alt="">
-                    <img  src="https://artmotion.net/wp-content/uploadimet/2021/06/CHAMPIONS-LEAGUE.jpg"   alt="">
-                    <img  src="https://artmotion.net/wp-content/uploadimet/2021/06/NBA.jpg"  alt="">
-                    <img  src="https://artmotion.net/wp-content/uploadimet/2021/06/DFB-POKAL.jpg"alt="">
-                    <img  src="https://artmotion.net/wp-content/uploadimet/2021/06/EUROPA-LEAGUE.jpg" alt="">
-                    <img  src="https://artmotion.net/wp-content/uploadimet/2021/06/EUROPA-CONFERENCE-LEAGUE.jpg" alt="">
-                    <img  src="https://artmotion.net/wp-content/uploadimet/2021/06/MOTO-GP.jpg"alt="">
-                    <img  src="https://artmotion.net/wp-content/uploadimet/2021/06/FFK.jpg"   alt="">
+                <div id="particles-js"></div> 
+                <div class="skynet_text">
+                    <h3 style="font-size:45px">SKYNET</h3>
+                    <p>Per nje rrjet te sigurt dhe te shpejt. <br>
+                        Nuk ke nevoj te stresohesh, 
+                        paguaj SKYNET dhe je i lumtur per gjithmon.
+                    </p>
                 </div>
+                <div class="count-particles"></div> 
             </section>
             <section class="our_products_layout">
                 <div class="container">
@@ -153,9 +169,9 @@
             </section>
             <section>
                 <div class="container">
-                    <h2> PRODUKTET  TONA</h2>
-                    <div class="row">
-                        <div class="col-md-4">
+                     <h2 style="text-align: center;" > PRODUKTET  TONA</h2>
+                          <div class="row">
+                            <div class="col-md-4">
                             <div class="product_information_box_wrapper">
                                 <img src="images/connection.png" alt="">
                                 <h5>VPN</h5>
@@ -176,7 +192,7 @@
                             </div>
                         </div>
                     </div>
-                    <h6 >Për këto produkte ju lutem kontaktoni në: shitja@artmotion.net</h6>
+                    <h6 style="text-align: center;" >Për këto produkte ju lutem kontaktoni në: shitja@artmotion.net</h6>
                 </div>
             </section>
             <section class="simple_go" style="background-image: url('images/img (1).jpg');">
@@ -205,51 +221,53 @@
                 </div>
             </section>
             <section class="artmotion_questions_layout">
-                    <div class="container">
+                <div class="container">
                     <ul class="list-group list-group-flush">
-                    <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
-                    <li class="list-group-item">Ofert Internet per rezident</li></a>
-                    <div class="collapse" id="collapseExample">
-                    <div class="card card-body">
-                    <ul>
-                    <li>Pako Start deri ne 20 mbps</li>
-                    <li>Pako Family deri ne 50 mbps</li>
-                    <li>Pako Premium deri ne 250 mbp</li>
-                    </ul>
-                    </div>
-                    </ul>
-                    <ul class="list-group list-group-flush">
-                    <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
-                    <li class="list-group-item">Cilat kanale perfshihen ne platformen ArtMotion</li></a>
-                    <div class="collapse" id="collapseExample1">
-                    <div class="card card-body">
-                    Platforma Artmotion perfshin mbi 200 kanale si: Kanalet vendore, kanalet vetanake, kanalet e platformës Tring, kanale sportive, <br>
-                    filma, dokumetare, kanale gjermane, italiane, franceze, mbi 30 kanale turke, kroate, ruse etj.                                    </div>
+                            <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                            <li class="list-group-item">Ofert Internet per rezident</li></a>
+                        <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                                <ul>
+                                    <li>Pako Start deri ne 20 mbps</li>
+                                    <li>Pako Family deri ne 50 mbps</li>
+                                    <li>Pako Premium deri ne 250 mbp</li>
+                                </ul>
+                            </div>
+                        </div>
                     </ul>
                     <ul class="list-group list-group-flush">
-                    <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
-                    <li class="list-group-item">Si mund te perfitoj nga oferta</li></a>
-                    <div class="collapse" id="collapseExample2">
-                    <div class="card card-body">
-                    Duhet te nenshkruani kontrat 12 mujore, ku pagesat mund ti beni ne baza mujore, 1 , 6 apo 12 mujore. <br>
-                    Pagesat mund te behen ne pikat shitese, distributorët apo edhe permes bankes si Pro Credit Bank, Raffieisen Bank, BKT, NLB, TEB, Bank Ekonomike si dhe në Western Union.                                            </div>
+                                <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample1" role="button" aria-expanded="false" aria-controls="collapseExample1">
+                                <li class="list-group-item">Cilat kanale perfshihen ne platformen ArtMotion</li></a>
+                        <div class="collapse" id="collapseExample1">
+                            <div class="card card-body">
+                                Platforma Artmotion perfshin mbi 200 kanale si: Kanalet vendore, kanalet vetanake, kanalet e platformës Tring, kanale sportive, <br>
+                                filma, dokumetare, kanale gjermane, italiane, franceze, mbi 30 kanale turke, kroate, ruse etj.                                   
+                            </div>
+                        </div>
                     </ul>
                     <ul class="list-group list-group-flush">
-                    <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
-                    <li class="list-group-item">Oferta per biznese te vogla dhe te mesme</li></a>
-                    <div class="collapse" id="collapseExample3">
-                    <div class="card card-body">
-                    Artmotion ofron sherbime te internetit me shpejtesi  prej 10 mbps, 20 mbps deri ne 50 mbps. Wireless dhe modem falas per kontrata 1 vjeqare, gjithashtu edhe per Pako Duo. <br>
-
-                    Perkrahje teknike 24/7 ne nr 0800 20 600 <br>
-
-                    Sherbimet per biznese te medha ofrohen permes pakove specifike sipas nevojave tuaja ku perfshijne sherbimet e internetit dhe televizionit. <br>
-
-                    Kontakto ne departamentin e biznesit per me shume informata 038 60 60 53 ose shitja@artmotion.net  <br>
-                    </div>
+                                <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample2" role="button" aria-expanded="false" aria-controls="collapseExample2">
+                                <li class="list-group-item">Si mund te perfitoj nga oferta</li></a>
+                        <div class="collapse" id="collapseExample2">
+                            <div class="card card-body">
+                                Duhet te nenshkruani kontrat 12 mujore, ku pagesat mund ti beni ne baza mujore, 1 , 6 apo 12 mujore. <br>
+                                Pagesat mund te behen ne pikat shitese, distributorët apo edhe permes bankes si Pro Credit Bank, Raffieisen Bank, BKT, NLB, TEB, Bank Ekonomike si dhe në Western Union.   
+                            </div>
+                        </div>    
                     </ul>
-
-                    </div>
+                    <ul class="list-group list-group-flush">
+                            <a class="btn btn-light" data-bs-toggle="collapse" href="#collapseExample3" role="button" aria-expanded="false" aria-controls="collapseExample3">
+                            <li class="list-group-item">Oferta per biznese te vogla dhe te mesme</li></a>
+                        <div class="collapse" id="collapseExample3">
+                            <div class="card card-body">
+                                Artmotion ofron sherbime te internetit me shpejtesi  prej 10 mbps, 20 mbps deri ne 50 mbps. Wireless dhe modem falas per kontrata 1 vjeqare, gjithashtu edhe per Pako Duo. <br>
+                                Perkrahje teknike 24/7 ne nr 0800 20 600 <br>
+                                Sherbimet per biznese te medha ofrohen permes pakove specifike sipas nevojave tuaja ku perfshijne sherbimet e internetit dhe televizionit. <br>
+                                Kontakto ne departamentin e biznesit per me shume informata 038 60 60 53 ose shitja@artmotion.net  <br>
+                            </div>
+                        </div>
+                    </ul>
+                </div>
             </section>
             <section class="armotion_footer_layout">
                 <div class="container">
@@ -259,38 +277,37 @@
                                     <p>	Rr. Lidhja e Pejës, ish Amortizatoret <br>
                                         Prishtinë 10000, Kosovë.</p>
                             </div>
-                          <div class="col ">
+                            <div class="col ">
                                 <span>
                                     080020600; 038606050
                                     <p>Email: <a href="#"> info@artmotion.net</a></p>
                                 </span>
-                         </div>
-                        </div>
+                            </div>
                     </div>
-                </section>
+                </div>
+            </section>
         </div>
         <footer class="text-center text-lg-start" style="background-color: #222222;">
-          <div class="container d-flex justify-content-center py-5">
-            <button type="button" class="btn mx-2">
-            <img src="images/facebook.png" alt="">
-            </button>
-            <button type="button" class="btn mx-2">
-            <img src="images/youtube.png" alt="">
-            </button>
-            <button type="button" class="btn mx-2">
-            <img src="images/instagram.png" alt="">
-            </button>
-            <button type="button" class="btn mx-2">
-            <img src="images/twitter.png" alt="">
-            </button>
-          </div>
-          <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://artmotion.net/">https://artmotion.net/</a>
-          </div>
-
+            <div class="container d-flex justify-content-center py-5">
+                <button type="button" class="btn mx-2">
+                    <img src="images/facebook.png" alt="">
+                </button>
+                <button type="button" class="btn mx-2">
+                    <img src="images/youtube.png" alt="">
+                </button>
+                <button type="button" class="btn mx-2">
+                    <img src="images/instagram.png" alt="">
+                </button>
+                <button type="button" class="btn mx-2">
+                    <img src="images/twitter.png" alt="">
+                </button>
+            </div>
+                <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+                    © 2020 Copyright:
+                    <a class="text-white" href="https://artmotion.net/">https://artmotion.net/</a>
+                </div>
         </footer>
-    <script src="js/scripts.js"></script>
+                <script src="js/scripts.js"></script>
     </body>
 </html>
 
