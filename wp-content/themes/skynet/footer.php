@@ -10,7 +10,26 @@
  */
 
 ?>
-
+    <footer class="text-center text-lg-start" style="background-color: #222222;">
+        <div class="container d-flex justify-content-center py-5">
+            <button type="button" class="btn mx-2">
+                <img src="images/facebook.png" alt="">
+            </button>
+            <button type="button" class="btn mx-2">
+                <img src="images/youtube.png" alt="">
+            </button>
+            <button type="button" class="btn mx-2">
+                <img src="images/instagram.png" alt="">
+            </button>
+            <button type="button" class="btn mx-2">
+                <img src="images/twitter.png" alt="">
+            </button>
+        </div>
+        <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+            © 2020 Copyright:
+            <a class="text-white" href="https://artmotion.net/">https://artmotion.net/</a>
+        </div>
+    </footer>
 	<footer id="colophon" class="site-footer">
 		<div class="site-info">
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'skynet' ) ); ?>">

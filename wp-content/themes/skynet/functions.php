@@ -140,10 +140,26 @@ add_action( 'widgets_init', 'skynet_widgets_init' );
  * Enqueue scripts and styles.
  */
 function skynet_scripts() {
-	wp_enqueue_style( 'skynet-style', get_stylesheet_uri(), array(), _S_VERSION );
-	wp_style_add_data( 'skynet-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'skynet-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_style( 'skynet-bs', get_template_directory_uri() . '/plugins/css/bootstrap.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'skynet-aos', 'https://unpkg.com/aos@2.3.1/dist/aos.css', array(), _S_VERSION );
+	wp_enqueue_style( 'skynet-slick', get_template_directory_uri() . '/plugins/slick/slick.css', array(), _S_VERSION );
+	wp_enqueue_style( 'skynet-slicktheme', get_template_directory_uri() . '/plugins/slick/slick-theme.css', array(), _S_VERSION );
+	wp_enqueue_style( 'skynet-fw4', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'skynet-aos', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), _S_VERSION );
+	wp_enqueue_style( 'skynet-fw4', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), _S_VERSION );
+    wp_enqueue_style( 'skynet-style', get_template_directory_uri() . '/css/all.css', array(), _S_VERSION );
+
+
+
+    wp_enqueue_script( 'skynet-particles', 'http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'skynet-stats', 'http://threejs.org/examples/js/libs/stats.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'skynet-aosjs', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'skynet-jquery', get_template_directory_uri() . '/plugins/jquery/jquery-3.6.0.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'skynet-poper', get_template_directory_uri() . '/plugins/popper/popper.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'skynet-bs4', get_template_directory_uri() . '/plugins/js/bootstrap.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'skynet-slick', get_template_directory_uri() . '/plugins/slick/slick.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'skynet-main', get_template_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -178,3 +194,29 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' => 'Theme Header Settings',
+        'menu_title' => 'Theme Header',
+        'menu_slug' => 'theme-header-settings',
+        'capability' => 'edit_posts',
+        'redirect' => true
+    ));
+    acf_add_options_page(array(
+        'page_title' => 'Theme General Settings',
+        'menu_title' => 'Theme General',
+        'menu_slug' => 'theme-general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => true
+    ));
+    acf_add_options_page(array(
+        'page_title' => 'Theme Footer Settings',
+        'menu_title' => 'Theme Footer',
+        'menu_slug' => 'theme-footer-settings',
+        'capability' => 'edit_posts',
+        'redirect' => true
+    ));
+
+
+}

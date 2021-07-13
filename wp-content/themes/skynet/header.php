@@ -23,37 +23,43 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'skynet' ); ?></a>
+    <nav class="header">
+        <div class="artmotion_header">
+            <div class="container">
+                <div class="artmotion_header_content">
+                    <div class="artmotion_icon">
+                        <img src="https://artmotion.net/wp-content/uploadimet/2018/11/ext.jpg" alt="artmotion_icon">
+                    </div>
+                    <div class="artmotion_header_menu_list" id="">
+                        <ul>
+                            <li><a class="toscroll" href="#"> Ballina </a></li>
+                            <li><a class="toscroll" href="#">Rreth Nesh </a></li>
+                            <li><a class="toscroll" href="#">Tv</a></li>
+                            <li><a class="toscroll" href="testbackround.html">Privat</a></li>
+                            <li><a class="toscroll" href="#">Biznes</a></li>
+                            <li><a class="toscroll" href="#">Lidhu</a></li>
+                            <li><a class="toscroll" href="#">Kontakt</a></li>
+                            <li><a class="toscroll" href="#">Media</a></li>
+                            <li><a class="toscroll" href="#">Testo Shpejtsin</a></li>
+                            <li><a class="toscroll" href="#">My Artmotion</a></li>
 
-	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$skynet_description = get_bloginfo( 'description', 'display' );
-			if ( $skynet_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $skynet_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'skynet' ); ?></button>
-			<?php
-			wp_nav_menu(
-				array(
-					'theme_location' => 'menu-1',
-					'menu_id'        => 'primary-menu',
-				)
-			);
-			?>
-		</nav><!-- #site-navigation -->
-	</header><!-- #masthead -->
+                        </ul>
+                    </div>
+                    <div class="artmotion_hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
