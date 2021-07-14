@@ -24,34 +24,21 @@
 <?php wp_body_open(); ?>
 <div id="page" class="site">
     <nav class="header">
-        <div class="artmotion_header">
+        <div class="skynet_header">
             <div class="container">
-                <div class="artmotion_header_content">
-                    <div class="artmotion_icon">
-                        <img src="https://artmotion.net/wp-content/uploadimet/2018/11/ext.jpg" alt="artmotion_icon">
+                <div class="skynet_header_content">
+                    <div class="logo">
+                        <img src="<?php the_field('logo','option');?>" alt="skynet_logo">
                     </div>
-                    <div class="artmotion_header_menu_list" id="">
-                        <ul>
-                            <li><a class="toscroll" href="#"> Ballina </a></li>
-                            <li><a class="toscroll" href="#">Rreth Nesh </a></li>
-                            <li><a class="toscroll" href="#">Tv</a></li>
-                            <li><a class="toscroll" href="testbackround.html">Privat</a></li>
-                            <li><a class="toscroll" href="#">Biznes</a></li>
-                            <li><a class="toscroll" href="#">Lidhu</a></li>
-                            <li><a class="toscroll" href="#">Kontakt</a></li>
-                            <li><a class="toscroll" href="#">Media</a></li>
-                            <li><a class="toscroll" href="#">Testo Shpejtsin</a></li>
-                            <li><a class="toscroll" href="#">My Artmotion</a></li>
-
-
-                        </ul>
+                    <div class="skynet_header_menu_list">
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'header',
+                            'menu_id'        => '',
+                        ) );
+                        ?>
                     </div>
-                    <div class="artmotion_hamburger">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <div class="skynet_hamburger">
                         <span></span>
                         <span></span>
                         <span></span>

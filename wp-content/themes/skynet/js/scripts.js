@@ -1,41 +1,60 @@
-$(document).ready(function () {
-  $('.banner_layout_slider').slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: true
-  });
-  AOS.init();
-});
 headerLinksOptions = {
   init : function () {
-      $("a.toscroll").on('click',function(e) {
-          var url = e.target.href;
-          var hash = url.substring(url.indexOf("#")+1);
-          $('html, body').animate({
-              scrollTop: $('#'+hash).offset().top - 120
-          }, 500);
-          return false;
-      });
+    $("a.toscroll").on('click',function(e) {
+      var url = e.target.href;
+      var hash = url.substring(url.indexOf("#")+1);
+      $('html, body').animate({
+        scrollTop: $('#'+hash).offset().top - 120
+      }, 500);
+      return false;
+    });
   }
 }
 headerMenuOptions = {
   init : function () {
-      $('.artmotion_hamburger').on('click',function () {
-          $(this).toggleClass('active');
-          if($('.artmotion_header_menu_list').css('max-height') == '0px'){
-              $('.artmotion_header_menu_list').css('max-height','1000px');
-          }
-          else{
-              $('.artmotion_header_menu_list').css('max-height','')
-          }
-      })
+    $('.skynet_hamburger').on('click',function () {
+      $(this).toggleClass('active');
+      if($('.skynet_header_menu_list').css('max-height') == '0px'){
+        $('.skynet_header_menu_list').css('max-height','1000px');
+      }
+      else{
+        $('.skynet_header_menu_list').css('max-height','')
+      }
+    })
   }
 }
+mainBannerOptions = {
+  init : function () {
+    $('.banner_layout_slider').slick({
+      dots: true,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 1,
+      adaptiveHeight: true
+    });
+  }
+}
+
+
+
+$(document).ready(function () {
+  mainBannerOptions.init();
+  headerMenuOptions.init();
+  AOS.init();
+});
+
+
+
+
+
+
+
+
+
+
 particlesJS("particles-js", {
   particles: {
-    number: { value: 375, density: { enable: true, value_area: 800 } },
+    number: { value: 70, density: { enable: true, value_area: 800 } },
     color: { value: "#000000" },
     shape: {
       type: "triangle",
@@ -105,9 +124,7 @@ count_particles = document.querySelector(".js-count-particles");
 update = function () {
   stats.begin();
   stats.end();
-  if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-    count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-  }
+
   requestAnimationFrame(update);
 };
 requestAnimationFrame(update);
