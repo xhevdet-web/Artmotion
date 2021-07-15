@@ -183,12 +183,6 @@ img {
   color: white;
   font-size: 20px;
 }
-.box {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-left: 7px solid #00AFEF;
-  padding: 20px;
-  margin-bottom: 20px;
-}
 /* HEADER */
 .skynet_header {
   height: 120px;
@@ -238,7 +232,7 @@ img {
   bottom: -5px;
   left: -10px;
   height: 2px;
-  background: black;
+  background: white;
   width: 0px;
   transition: all 0.3s ease-in-out;
 }
@@ -393,6 +387,40 @@ img {
   padding-top: 120px;
   overflow: hidden;
 }
+.box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-left: 7px solid #00AFEF;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+.box .box_btn {
+  background: #00AFEF;
+  color: white;
+  cursor: pointer;
+  padding: 8px 25px;
+  display: inline-block;
+  margin-bottom: 0;
+}
+.news_box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all 0.3s ease-in-out;
+}
+.news_box .news_box_image {
+  height: 250px;
+}
+.news_box .news_box_content {
+  padding: 15px;
+}
+.news_box .news_box_content h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+.news_box:hover {
+  transform: scale(1.05);
+}
 /* END GENERAL ELEMENTS */
 /* TYPOGRAPHY */
 h1,
@@ -523,6 +551,40 @@ input {
   color: #00AFEF;
   text-transform: uppercase;
   font-weight: bold;
+}
+.news_page_section {
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+.news_page_section h1 {
+  margin-bottom: 40px;
+}
+.related_news_section {
+  margin-bottom: 120px;
+}
+.related_news_section h2 {
+  text-align: center;
+  color: #00AFEF;
+  margin-bottom: 60px;
+}
+.jobs_section {
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+.jobs_section h1 {
+  margin-bottom: 60px;
+}
+.single_job_wrapper {
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+.single_post_wrapper {
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+.single_post_wrapper .main_post_image {
+  margin-bottom: 20px;
+  width: 100%;
 }
 /* END CONTENT ELEMENTS  */
 @media (max-width: 992px) {

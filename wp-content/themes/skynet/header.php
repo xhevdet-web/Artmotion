@@ -29,9 +29,9 @@
         <div class="skynet_header">
             <div class="container">
                 <div class="skynet_header_content">
-                    <div class="logo">
+                    <a href="/" class="logo mb-0">
                         <img src="<?php the_field('logo','option');?>" alt="skynet_logo">
-                    </div>
+                    </a>
                     <div class="skynet_header_menu_list">
                         <?php
                         wp_nav_menu( array(
