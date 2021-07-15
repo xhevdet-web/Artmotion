@@ -4,7 +4,7 @@
         <div class="intro_text">
             <h1 class="main_title"><?php the_sub_field('title')?></h1>
             <div class="intro_text_quote">
-                <p>"<?php the_sub_field('quote')?>"</p>
+                <p><?php the_sub_field('quote')?></p>
             </div>
         </div>
     </div>
