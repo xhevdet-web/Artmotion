@@ -28,45 +28,49 @@ body {
 }
 /** END GENERAL **/
 /* HEADER */
-.artmotion_header {
-  height: 100px;
+.skynet_header {
+  height: 120px;
   position: fixed;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  /*box-shadow: 0 2px 6px rgba(0,0,0,0.20);*/
   top: 0;
   left: 0;
   width: 100%;
   background: white;
-  z-index: 2;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  background: #00AFEF;
 }
-.artmotion_header .artmotion_header_content {
+.skynet_header .skynet_header_content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100px;
 }
-.artmotion_header .artmotion_header_content .artmotion_icon img {
-  width: 120px;
+.skynet_header .skynet_header_content .logo img {
+  filter: brightness(0) invert(1);
+  height: 80px;
 }
-.artmotion_header .artmotion_header_content .artmotion_header_menu_list {
+.skynet_header .skynet_header_content .skynet_header_menu_list {
   transition: all 0.3s ease-in-out;
 }
-.artmotion_header .artmotion_header_content .artmotion_header_menu_list ul {
+.skynet_header .skynet_header_content .skynet_header_menu_list ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   display: flex;
 }
-.artmotion_header .artmotion_header_content .artmotion_header_menu_list ul li {
+.skynet_header .skynet_header_content .skynet_header_menu_list ul li {
   margin-left: 30px;
   font-size: 18px;
   line-height: 18px;
 }
-.artmotion_header .artmotion_header_content .artmotion_header_menu_list ul li a {
+.skynet_header .skynet_header_content .skynet_header_menu_list ul li a {
   position: relative;
   text-decoration: none;
-  color: #393939;
+  color: white;
+  font-weight: bold;
 }
-.artmotion_header .artmotion_header_content .artmotion_header_menu_list ul li a:after {
+.skynet_header .skynet_header_content .skynet_header_menu_list ul li a:after {
   content: '';
   position: absolute;
   bottom: -5px;
@@ -76,21 +80,21 @@ body {
   width: 0px;
   transition: all 0.3s ease-in-out;
 }
-.artmotion_header .artmotion_header_content .artmotion_header_menu_list ul li a:hover:after {
+.skynet_header .skynet_header_content .skynet_header_menu_list ul li a:hover:after {
   width: calc(100% + 20px);
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger {
+.skynet_header .skynet_header_content .skynet_hamburger {
   display: none;
   position: relative;
   width: 40px;
   height: 22px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger span {
+.skynet_header .skynet_header_content .skynet_hamburger span {
   display: block;
   position: absolute;
   height: 3px;
   width: 20px;
-  background: black;
+  background: white;
   opacity: 1;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -101,67 +105,137 @@ body {
   -o-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(even) {
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(even) {
   left: 50%;
   border-radius: 0 3px 3px 0;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(odd) {
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(odd) {
   left: 0px;
   border-radius: 3px 0 0 3px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(2) {
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(2) {
   width: 12px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(1),
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(2) {
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(1),
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(2) {
   top: 0px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(3),
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(4) {
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(3),
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(4) {
   top: 9px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(5),
-.artmotion_header .artmotion_header_content .artmotion_hamburger span:nth-child(6) {
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(5),
+.skynet_header .skynet_header_content .skynet_hamburger span:nth-child(6) {
   top: 18px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(1),
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(6) {
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(1),
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(6) {
   -webkit-transform: rotate(45deg);
   -moz-transform: rotate(45deg);
   -o-transform: rotate(45deg);
   transform: rotate(45deg);
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(2),
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(5) {
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(2),
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(5) {
   -webkit-transform: rotate(-45deg);
   -moz-transform: rotate(-45deg);
   -o-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(1) {
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(1) {
   left: 5px;
   top: 5px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(2) {
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(2) {
   left: calc(50% - 5px);
   top: 5px;
   width: 20px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(3) {
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(3) {
   left: -50%;
   opacity: 0;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(4) {
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(4) {
   left: 100%;
   opacity: 0;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(5) {
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(5) {
   left: 5px;
   top: 15px;
 }
-.artmotion_header .artmotion_header_content .artmotion_hamburger.active span:nth-child(6) {
+.skynet_header .skynet_header_content .skynet_hamburger.active span:nth-child(6) {
   left: calc(50% - 5px);
   top: 15px;
+}
+.our_services_layout {
+  text-align: center;
+  margin-bottom: 120px;
+}
+.our_services_layout h2 {
+  margin-bottom: 60px;
+  color: #00AFEF;
+}
+.our_services_layout .our_service_box {
+  box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.16);
+  padding: 44px 30px 30px;
+  height: 100%;
+}
+.our_services_layout .our_service_box .image_box {
+  min-height: 80px;
+  display: flex;
+  justify-content: center;
+}
+.our_services_layout .our_service_box .image_box img {
+  margin-bottom: 15px;
+}
+.our_services_layout .our_service_box h4 {
+  font-weight: bold;
+  color: #00AFEF;
+}
+.images_layout {
+  margin-bottom: 120px;
+}
+.images_layout .image_wrapper {
+  margin-bottom: 40px;
+}
+.images_layout .image_wrapper img {
+  width: 100%;
+}
+/* KONTAKT.HTML CONTENT ELEMENTS*/
+.skynet_distribution_layout {
+  display: inline-block;
+  width: 100%;
+}
+.skynet_distribution_layout h2 {
+  text-align: center;
+  padding-bottom: 40px;
+}
+.skynet_distribution_layout a {
+  font-size: 20px;
+  padding: 20px;
+  color: black;
+  margin-left: 125px;
+  text-decoration: none;
+}
+.skynet_distribution_layout a:hover {
+  background-color: #00AFEF;
+  color: white;
+}
+/* END KONTAKT.HTML CONTENT ELEMENTS*/
+.skynet_input_layout {
+  padding-top: 20px;
+  width: 40%;
+  margin-left: 100px ;
+  padding-bottom: 40px;
+}
+.skynet_input_layout h3 {
+  color: #00AFEF;
+}
+.skynet_input_layout p {
+  padding: 25px;
+}
+.skynet_input_layout button {
+  width: 150px;
 }
 .skynet_text {
   font-size: 1.3em;
@@ -345,4 +419,68 @@ body {
 .armotion_footer_layout span {
   color: white;
   font-size: 20px;
+}
+.skynet_rrethnes_layout {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background-color: #787878;
+}
+.skynet_rrethnes_layout .rrethnesh_wrapper {
+  position: absolute;
+  width: 200px;
+}
+.skynet_rrethnes_layout .rrethnesh_wrapper h4 {
+  color: white;
+  position: absolute;
+  padding-top: 250px;
+}
+.skynet_rrethnes_layout .rrethnesh_wrapper a {
+  color: white;
+  position: absolute;
+  padding-top: 250px;
+  text-decoration: none;
+  width: 400px;
+  margin-left: 950px;
+}
+.skynet_rrethnes_layout .rrethnesh_wrapper a:hover {
+  color: #00AFEF;
+}
+.skynet_rrethnes_layout .rrethnesh_wrapper p {
+  color: white;
+  position: absolute;
+  padding-top: 250px;
+  text-decoration: none;
+  width: 400px;
+  margin-left: 1000px;
+}
+.skynet_rrethnesh_banner {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+.skynet_rrethnesh_banner .skynet_rrethnesh_banner_wrapper {
+  width: 50%;
+  padding-top: 50px;
+  display: inline-block;
+}
+.skynet_rrethnesh_banner .skynet_rrethnesh_banner_wrapper p {
+  padding-top: 25px;
+}
+.skynet_rrethnesh_banner .skynet_rrethnesh_banner_wrapper h4 {
+  padding-top: 25px;
+}
+.skynet_rrethnesh_banner .skynet_rrethnesh_banner_img {
+  width: 40%;
+  display: flex;
+  float: right;
+  padding-top: 80px;
+  height: 500px;
+}
+.skynet_rrethnesh_quotes {
+  text-align: center;
+  padding-top: 40px;
+}
+.skynet_rrethnesh_quotes p {
+  padding-top: 25px;
 }

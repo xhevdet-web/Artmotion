@@ -105,8 +105,8 @@ CREATE TABLE `wp_options` (
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://skynet.artcode', 'yes'),
-(2, 'home', 'http://skynet.artcode', 'yes'),
+(1, 'siteurl', 'http://localhost/skynet', 'yes'),
+(2, 'home', 'http://localhost/skynet', 'yes'),
 (3, 'blogname', 'skynet', 'yes'),
 (4, 'blogdescription', 'Just another WordPress site', 'yes'),
 (5, 'users_can_register', '0', 'yes'),

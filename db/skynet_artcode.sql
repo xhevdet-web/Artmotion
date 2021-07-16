@@ -101,12 +101,12 @@ CREATE TABLE `wp_options` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
--- Dumping data for table `wp_options`
+-- Dumping data for table `wp_options`'http://skynet.artcode'
 --
 
 INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(1, 'siteurl', 'http://skynet.artcode', 'yes'),
-(2, 'home', 'http://skynet.artcode', 'yes'),
+(1, 'siteurl', 'http://localhost/artmotion', 'yes'),
+(2, 'home', 'http://localhost/artmotion', 'yes'),
 (3, 'blogname', 'skynet', 'yes'),
 (4, 'blogdescription', 'Just another WordPress site', 'yes'),
 (5, 'users_can_register', '0', 'yes'),
