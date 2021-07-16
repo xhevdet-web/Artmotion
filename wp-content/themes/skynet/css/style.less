@@ -209,12 +209,7 @@ text-align: center;
 }
 
 
-.box {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-left: 7px solid @primary;
-  padding: 20px;
-  margin-bottom: 20px;
-}
+
 
 /* HEADER */
 .skynet_header {
@@ -261,7 +256,7 @@ text-align: center;
               bottom: -5px;
               left: -10px;
               height: 2px;
-              background: black;
+              background: white;
               width: 0px;
               transition: all .3s ease-in-out;
             }
@@ -433,6 +428,40 @@ text-align: center;
   padding-top: 120px;
   overflow: hidden;
 }
+.box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-left: 7px solid @primary;
+  padding: 20px;
+  margin-bottom: 20px;
+  .box_btn {
+    background: @primary;
+    color : white;
+    cursor: pointer;
+    padding: 8px 25px;
+    display: inline-block;
+    margin-bottom: 0;
+  }
+}
+.news_box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  display: block;
+  cursor: pointer;
+  margin-bottom: 30px;
+  transition: all .3s ease-in-out;
+  .news_box_image {
+    height: 250px;
+  }
+  .news_box_content {
+    padding: 15px;
+    h4 {
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+  }
+  &:hover {
+    transform: scale(1.05);
+  }
+}
 
 /* END GENERAL ELEMENTS */
 
@@ -572,6 +601,40 @@ input {
     color : @primary;
     text-transform: uppercase;
     font-weight: bold;
+  }
+}
+.news_page_section {
+  margin-top: 60px;
+  margin-bottom: 120px;
+  h1 {
+    margin-bottom: 40px;
+  }
+}
+.related_news_section {
+  margin-bottom: 120px;
+  h2 {
+    text-align: center;
+    color : @primary;
+    margin-bottom: 60px;
+  }
+}
+.jobs_section {
+  margin-top: 60px;
+  margin-bottom: 120px;
+  h1 {
+    margin-bottom: 60px;
+  }
+}
+.single_job_wrapper {
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+.single_post_wrapper{
+  margin-top: 60px;
+  margin-bottom: 120px;
+  .main_post_image {
+    margin-bottom: 20px;
+    width: 100%;
   }
 }
 /* END CONTENT ELEMENTS  */
