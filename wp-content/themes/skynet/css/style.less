@@ -625,6 +625,17 @@ input {
     margin-bottom: 60px;
   }
 }
+.jobs_list_section {
+  margin-top: 60px;
+  margin-bottom: 120px;
+  h2 {
+    color : @primary;
+  }
+  .jobs_list_section_title_wrapper {
+    text-align: center;
+    margin-bottom: 60px;
+  }
+}
 .single_job_wrapper {
   margin-top: 60px;
   margin-bottom: 120px;
@@ -635,6 +646,102 @@ input {
   .main_post_image {
     margin-bottom: 20px;
     width: 100%;
+  }
+}
+.rreth_nesh_layout {
+  margin-top: 80px;
+  margin-bottom: 120px;
+  h2 {
+    color : @primary;
+  }
+}
+.tv_layout {
+
+  margin-bottom: 120px;
+  margin-top: 60px;
+  .tv_layout_title_wrapper {
+    margin-bottom: 60px;
+    text-align: center;
+    h2 {
+      color  : @primary;
+
+    }
+  }
+  .skynet_accordions {
+    .skynet_accordion {
+      margin-bottom: 30px;
+      .skynet_accordion_header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 20px;
+        background: #e3e3e3;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        h4 {
+          color : black;
+          text-transform: uppercase;
+          margin-bottom: 0;
+        }
+        span {
+          cursor: pointer;
+          padding: 5px;
+          transition: all .3s ease-in-out;
+          i {
+            color : @primary;
+            font-size: 20px;
+          }
+
+        }
+        .open_accordion.active {
+          box-shadow: none;
+                  span {
+            transform: rotate(180deg);
+          }
+
+        }
+      }
+    }
+    .skynet_accordion_body {
+      max-height: 0px;
+      overflow: hidden;
+      transition: all .3s ease-in-out;
+      .skynet_accordion_body_content {
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        padding: 15px;
+        background: #e3e3e3;
+        .accordion_image_box {
+          display: flex;
+          justify-content: center;
+        }
+      }
+    }
+  }
+}
+.contact_form_layout{
+  .contact_form_layout_title_wrapper {
+    margin-bottom: 60px;
+    text-align: center;
+    h2 {
+      color  : @primary;
+
+    }
+  }
+  label {
+    width: 100%;
+  }
+  input,textarea {
+    width: 100%;
+    border : none;
+    background: #efefef;
+    padding: 10px 15px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    outline: none;
+    &.wpcf7-submit {
+      background: @primary;
+      color : white;
+      font-weight: bold;
+    }
   }
 }
 /* END CONTENT ELEMENTS  */
