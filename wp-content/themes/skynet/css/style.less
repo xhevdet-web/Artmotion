@@ -422,7 +422,14 @@ text-align: center;
 
 /* GENERAL ELEMENTS */
 
+#page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+}
 .content_wrapper {
+  flex-grow: 1;
   padding-top: 120px;
   overflow: hidden;
 }
@@ -777,6 +784,20 @@ input {
         text-transform: uppercase;
       }
     }
+  }
+}
+.wrapper_404 {
+  text-align: center;
+  padding: 80px 0 120px 0;
+  h1 {
+    font-size: 120px;
+    line-height: 120px;
+    color : @primary;
+    margin-bottom: 0px;
+  }
+  h3 {
+    font-size: 60px;
+    line-height: 100px;
   }
 }
 /* END CONTENT ELEMENTS  */
