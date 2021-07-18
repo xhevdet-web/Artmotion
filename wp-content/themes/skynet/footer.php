@@ -48,41 +48,22 @@
         <div class="skynet_bottom_footer">
             <div class="container">
                 <div class="skynet_bottom_footer_content">
-                    <p>@ 2021 Copyright : Skynet </p>
+                    <p><?php the_field('footer_copyright_text','otpion');?></p>
                     <div class="footer_social_icons">
-                        <a class="footer_social_icon" href="">
-                            <i class="fa fa-facebook"></i>
-                        </a>
-                        <a class="footer_social_icon" href="">
-                            <i class="fa fa-instagram"></i>
-                        </a>
-
+                        <?php if (have_rows('footer_social_media','option')): ?>
+                            <?php while (have_rows('footer_social_media','option')) : the_row(); ?>
+                                <a class="footer_social_icon" href="<?php the_sub_field('url');?>">
+                                    <?php the_sub_field('icon');?>
+                                </a>
+                            <?php endwhile; ?>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
     </footer>
-    <!--<footer class="text-center text-lg-start" style="background-color: #222222;">
-        <div class="container d-flex justify-content-center py-5">
-            <button type="button" class="btn mx-2">
-                <img src="images/facebook.png" alt="">
-            </button>
-            <button type="button" class="btn mx-2">
-                <img src="images/youtube.png" alt="">
-            </button>
-            <button type="button" class="btn mx-2">
-                <img src="images/instagram.png" alt="">
-            </button>
-            <button type="button" class="btn mx-2">
-                <img src="images/twitter.png" alt="">
-            </button>
-        </div>
-        <div class="text-center text-white p-3" style="background-color: rgba(0, 0, 0, 0.2);">
-            © 2020 Copyright:
-            <a class="text-white" href="https://artmotion.net/">https://artmotion.net/</a>
-        </div>
-    </footer>-->
-</div><!-- #page -->
+
+</div>
 
 <?php wp_footer(); ?>
 

@@ -1,7 +1,7 @@
 <section class="tv_layout">
     <div class="container">
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-xl-6 offset-xl-3 col-lg-10 offset-lg-1">
                 <div class="tv_layout_title_wrapper">
                     <h2><?php the_sub_field('title');?></h2>
                     <?php the_sub_field('content');?>
@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-6 offset-md-3">
+            <div class="col-xl-6 offset-xl-3 col-lg-10 offset-lg-1">
                 <div class="skynet_accordions">
                     <?php if (have_rows('accordions')): ?>
                         <?php while (have_rows('accordions')) : the_row(); ?>

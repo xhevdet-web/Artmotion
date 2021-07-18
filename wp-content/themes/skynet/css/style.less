@@ -49,8 +49,6 @@ img {
   background-position: 50% 50%;
 } /* ---- stats.js --
 -- */
-
-
 .js-count-particles {
   font-size: 1.1em;
 }
@@ -551,7 +549,6 @@ input {
     }
   }
 }
-
 .our_services_layout {
   text-align: center;
   margin-bottom: 120px;
@@ -741,6 +738,44 @@ input {
       background: @primary;
       color : white;
       font-weight: bold;
+    }
+  }
+}
+.contact_map_section {
+  height: 600px;
+}
+.contact_boxes_section {
+  margin-top: 60px;
+  margin-bottom: 120px;
+  .contact_box {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 30px;
+    height: 100%;
+    .icon_wrapper {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      .icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 100%;
+        background: @primary;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          color : white;
+          font-size: 24px;
+        }
+      }
+    }
+    .contact_box_content {
+      text-align: center;
+      .contact_box_content_title {
+        color : @primary;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+      }
     }
   }
 }

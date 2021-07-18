@@ -34,7 +34,7 @@ img {
   position: relative;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0deg, #0c2130 0%, #00AFEF 100%);
+  background: linear-gradient(0deg, #0c2130 0%, #04acf4 100%);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
@@ -195,7 +195,7 @@ img {
   z-index: 100;
   display: flex;
   align-items: center;
-  background: #00AFEF;
+  background: #04acf4;
 }
 .skynet_header .skynet_header_content {
   display: flex;
@@ -335,7 +335,7 @@ img {
 }
 .skynet_footer .skynet_top_footer .footer_title {
   text-transform: uppercase;
-  color: #00AFEF;
+  color: #04acf4;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -389,12 +389,12 @@ img {
 }
 .box {
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-left: 7px solid #00AFEF;
+  border-left: 7px solid #04acf4;
   padding: 20px;
   margin-bottom: 20px;
 }
 .box .box_btn {
-  background: #00AFEF;
+  background: #04acf4;
   color: white;
   cursor: pointer;
   padding: 8px 25px;
@@ -509,7 +509,7 @@ input {
 }
 .our_services_layout h2 {
   margin-bottom: 60px;
-  color: #00AFEF;
+  color: #04acf4;
 }
 .our_services_layout .our_service_box {
   box-shadow: 2px 2px 6px 2px rgba(0, 0, 0, 0.16);
@@ -526,7 +526,7 @@ input {
 }
 .our_services_layout .our_service_box h4 {
   font-weight: bold;
-  color: #00AFEF;
+  color: #04acf4;
 }
 .images_layout {
   margin-bottom: 120px;
@@ -539,16 +539,16 @@ input {
 }
 .tech_support_layout {
   margin-bottom: 120px;
-  background: #00AFEF;
+  background: #04acf4;
   padding: 120px 0px;
   color: white;
-  background: linear-gradient(to left, #0c2130 0%, #00AFEF 60%);
+  background: linear-gradient(to left, #0c2130 0%, #04acf4 60%);
 }
 .clients_services_layout {
   margin-bottom: 120px;
 }
 .clients_services_layout h3 {
-  color: #00AFEF;
+  color: #04acf4;
   text-transform: uppercase;
   font-weight: bold;
 }
@@ -564,7 +564,7 @@ input {
 }
 .related_news_section h2 {
   text-align: center;
-  color: #00AFEF;
+  color: #04acf4;
   margin-bottom: 60px;
 }
 .jobs_section {
@@ -579,7 +579,7 @@ input {
   margin-bottom: 120px;
 }
 .jobs_list_section h2 {
-  color: #00AFEF;
+  color: #04acf4;
 }
 .jobs_list_section .jobs_list_section_title_wrapper {
   text-align: center;
@@ -602,7 +602,7 @@ input {
   margin-bottom: 120px;
 }
 .rreth_nesh_layout h2 {
-  color: #00AFEF;
+  color: #04acf4;
 }
 .tv_layout {
   margin-bottom: 120px;
@@ -613,7 +613,7 @@ input {
   text-align: center;
 }
 .tv_layout .tv_layout_title_wrapper h2 {
-  color: #00AFEF;
+  color: #04acf4;
 }
 .tv_layout .skynet_accordions .skynet_accordion {
   margin-bottom: 30px;
@@ -637,7 +637,7 @@ input {
   transition: all 0.3s ease-in-out;
 }
 .tv_layout .skynet_accordions .skynet_accordion .skynet_accordion_header span i {
-  color: #00AFEF;
+  color: #04acf4;
   font-size: 20px;
 }
 .tv_layout .skynet_accordions .skynet_accordion .skynet_accordion_header .open_accordion.active {
@@ -665,7 +665,7 @@ input {
   text-align: center;
 }
 .contact_form_layout .contact_form_layout_title_wrapper h2 {
-  color: #00AFEF;
+  color: #04acf4;
 }
 .contact_form_layout label {
   width: 100%;
@@ -682,9 +682,47 @@ input {
 }
 .contact_form_layout input.wpcf7-submit,
 .contact_form_layout textarea.wpcf7-submit {
-  background: #00AFEF;
+  background: #04acf4;
   color: white;
   font-weight: bold;
+}
+.contact_map_section {
+  height: 600px;
+}
+.contact_boxes_section {
+  margin-top: 60px;
+  margin-bottom: 120px;
+}
+.contact_boxes_section .contact_box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  padding: 30px;
+  height: 100%;
+}
+.contact_boxes_section .contact_box .icon_wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+.contact_boxes_section .contact_box .icon_wrapper .icon {
+  width: 80px;
+  height: 80px;
+  border-radius: 100%;
+  background: #04acf4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contact_boxes_section .contact_box .icon_wrapper .icon i {
+  color: white;
+  font-size: 24px;
+}
+.contact_boxes_section .contact_box .contact_box_content {
+  text-align: center;
+}
+.contact_boxes_section .contact_box .contact_box_content .contact_box_content_title {
+  color: #04acf4;
+  margin-bottom: 10px;
+  text-transform: uppercase;
 }
 /* END CONTENT ELEMENTS  */
 @media (max-width: 992px) {
@@ -730,7 +768,7 @@ input {
     top: 60px;
     left: 0;
     width: 100%;
-    background: #00AFEF;
+    background: #04acf4;
   }
   .skynet_header .skynet_header_content .skynet_header_menu_list ul {
     display: flex;
@@ -815,7 +853,7 @@ input {
     margin-bottom: 60px;
     padding: 20px 0px;
     color: white;
-    background: #00AFEF;
+    background: #04acf4;
   }
   .tech_support_layout .tech_support_person {
     display: flex;
