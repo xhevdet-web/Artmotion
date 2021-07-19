@@ -52,7 +52,7 @@
                     <div class="footer_social_icons">
                         <?php if (have_rows('footer_social_media','option')): ?>
                             <?php while (have_rows('footer_social_media','option')) : the_row(); ?>
-                                <a class="footer_social_icon" href="<?php the_sub_field('url');?>">
+                                <a class="footer_social_icon" href="<?php the_sub_field('link');?>">
                                     <?php the_sub_field('icon');?>
                                 </a>
                             <?php endwhile; ?>
