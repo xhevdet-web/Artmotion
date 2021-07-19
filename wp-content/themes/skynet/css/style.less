@@ -467,7 +467,55 @@ text-align: center;
     transform: scale(1.05);
   }
 }
+.skynet_accordions {
+  .skynet_accordion {
+    margin-bottom: 30px;
+    .skynet_accordion_header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 20px;
+      background: #e3e3e3;
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      h4 {
+        color : black;
+        text-transform: uppercase;
+        margin-bottom: 0;
+      }
+      span {
+        cursor: pointer;
+        padding: 5px;
+        transition: all .3s ease-in-out;
+        i {
+          color : @primary;
+          font-size: 20px;
+        }
 
+      }
+      .open_accordion.active {
+        box-shadow: none;
+        span {
+          transform: rotate(180deg);
+        }
+
+      }
+    }
+  }
+  .skynet_accordion_body {
+    max-height: 0px;
+    overflow: hidden;
+    transition: all .3s ease-in-out;
+    .skynet_accordion_body_content {
+      box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+      padding: 15px;
+      background: #e3e3e3;
+      .accordion_image_box {
+        display: flex;
+        justify-content: center;
+      }
+    }
+  }
+}
 /* END GENERAL ELEMENTS */
 
 /* TYPOGRAPHY */
@@ -660,7 +708,6 @@ input {
   }
 }
 .tv_layout {
-
   margin-bottom: 120px;
   margin-top: 60px;
   .tv_layout_title_wrapper {
@@ -671,55 +718,7 @@ input {
 
     }
   }
-  .skynet_accordions {
-    .skynet_accordion {
-      margin-bottom: 30px;
-      .skynet_accordion_header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 20px;
-        background: #e3e3e3;
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        h4 {
-          color : black;
-          text-transform: uppercase;
-          margin-bottom: 0;
-        }
-        span {
-          cursor: pointer;
-          padding: 5px;
-          transition: all .3s ease-in-out;
-          i {
-            color : @primary;
-            font-size: 20px;
-          }
 
-        }
-        .open_accordion.active {
-          box-shadow: none;
-                  span {
-            transform: rotate(180deg);
-          }
-
-        }
-      }
-    }
-    .skynet_accordion_body {
-      max-height: 0px;
-      overflow: hidden;
-      transition: all .3s ease-in-out;
-      .skynet_accordion_body_content {
-        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-        padding: 15px;
-        background: #e3e3e3;
-        .accordion_image_box {
-          display: flex;
-          justify-content: center;
-        }
-      }
-    }
-  }
 }
 .contact_form_layout{
   .contact_form_layout_title_wrapper {
@@ -795,6 +794,7 @@ input {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
+    background-size: cover;
    a,h4 {
      color : white;
    }
@@ -839,7 +839,13 @@ input {
     color: @primary;
   }
 }
-
+.faq_layout {
+  margin-top: 60px;
+  margin-bottom: 120px;
+  .faq_layout_title_wrapper {
+    margin-bottom: 60px;
+  }
+}
 /* END CONTENT ELEMENTS  */
 
 
