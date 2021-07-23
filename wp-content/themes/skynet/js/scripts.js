@@ -134,7 +134,7 @@ particlesOptions = {
 
 $(document).ready(function () {
   mainBannerOptions.init();
-  mainBannerOptions.init();
+  headerMenuOptions.init();
   accordionOptions.init();
   particlesOptions.init();
   AOS.init();

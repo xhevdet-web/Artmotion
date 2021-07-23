@@ -2,9 +2,11 @@
     <div class="container">
         <div class="faq_layout_title_wrapper">
             <h2><?php the_sub_field('title');?></h2>
-            <p>
-                <?php the_sub_field('content');?>
-            </p>
+            <?php if(get_sub_field('content')):?>
+                <p>
+                    <?php the_sub_field('content');?>
+                </p>
+            <?php endif;?>
         </div>
 
         <div class="skynet_accordions">
@@ -18,9 +20,11 @@
                         <div class="skynet_accordion_body">
                             <div class="skynet_accordion_body_content">
                                 <?php the_sub_field('content');?>
-                                <div class="accordion_image_box">
-                                    <img src="<?php the_sub_field('image'); ?>" alt="">
-                                </div>
+                                <?php if(get_sub_field('image')):?>
+                                    <div class="accordion_image_box">
+                                        <img src="<?php the_sub_field('image'); ?>" alt="">
+                                    </div>
+                                <?php endif;?>
                             </div>
                         </div>
                     </div>

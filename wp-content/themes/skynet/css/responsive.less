@@ -1,42 +1,6 @@
-@media(max-width: 992px) {
-    /** Our Work Section **/
-    .our_work_section {
-      .instagram-image {
-        width: 48% !important;
-      }
-    }
-    /** End Our Work Section **/
-  
-  }
-  @media(max-width: 780px){
-  
-    /** GENERAL **/
-    .content-title {
-      margin-bottom: 25px;
-      text-align: left;
-    }
-    .content-subtitle {
-      text-align: left;
-    }
-    .icon {
-      a {
-        min-width: 40px;
-        height: 40px;
-        i {
-          font-size: 18px;
-        }
-      }
-  
-    }
-    /** END GENERAL **/
-  
-
-}
-
 @media(max-width: 780px){
 
   /* HEADER */
-
   .skynet_header {
     height: 60px;
     .skynet_header_content{
@@ -74,9 +38,19 @@
       }
     }
   }
-
   /* END HEADER */
 
+  /* FOOTER */
+  .skynet_footer {
+    .skynet_top_footer {
+      padding: 20px 0;
+      .footer_logo {
+        width: 100px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+  /* END FOOTER */
 
 
   /* GENERAL ELEMENTS */
@@ -84,6 +58,36 @@
   .content_wrapper {
     padding-top: 60px;
     overflow: hidden;
+  }
+  .skynet_accordions {
+    .skynet_accordion {
+      margin-bottom: 20px;
+      .skynet_accordion_header {
+        padding: 10px 10px;
+      }
+    }
+    .skynet_accordion_body {
+      .skynet_accordion_body_content {
+        padding: 10px;
+      }
+    }
+  }
+  .box {
+    border-left: 5px solid @primary;
+    padding: 10px;
+    .box_btn {
+      padding: 6px 20px;
+    }
+  }
+  .news_box {
+    margin-bottom: 20px;
+    .news_box_image {
+      height: 200px;
+    }
+    .news_box_content {
+      padding: 10px;
+    }
+
   }
 
   /* END GENERAL ELEMENTS */
@@ -98,6 +102,7 @@
       font-size: 18px;
       line-height: 22px;
     }
+    h5{}
     p,h6,a {
       font-size: 14px;
       line-height: 20px;
@@ -168,6 +173,87 @@
         width: 50%;
       }
     }
+  }
+  .related_news_section {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    h2 {
+      margin-bottom: 30px;
+    }
+  }
+  .clients_services_layout {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    h3 {
+      color : @primary;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  .newsletter_add_layout {
+    margin-bottom: 60px;
+    margin-top: 30px;
+    .newsletter_add_layout_wrapper {
+      padding: 80px 20px;
+    }
+  }
+  .faq_layout {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    .faq_layout_title_wrapper {
+      margin-bottom: 30px;
+    }
+  }
+  .rreth_nesh_layout {
+    margin-top: 30px;
+    margin-bottom: 60px;
+  }
+  .jobs_list_section {
+    margin-top: 30px;
+    margin-bottom: 60px;
+
+    .jobs_list_section_title_wrapper {
+      margin-bottom: 30px;
+    }
+  }
+  .tv_layout {
+    margin-bottom: 60px;
+    margin-top: 30px;
+    .tv_layout_title_wrapper {
+      margin-bottom: 30px;
+    }
+
+  }
+  .news_page_section {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+  .jobs_section {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    h1 {
+      margin-bottom: 30px;
+    }
+  }
+  .contact_boxes_section {
+    margin-top: 30px;
+    margin-bottom: 60px;
+    .contact_box {
+      padding: 20px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+  }
+  .contact_form_layout{
+    .contact_form_layout_title_wrapper {
+      margin-bottom: 30px;
+    }
+  }
+  .contact_map_section {
+    height: 400px;
   }
   /* END CONTENT ELEMENTS  */
 
