@@ -86,7 +86,7 @@ $size = ['width' => 600, 'height' => 0];
                             </td>
                         </tr>
                     <?php } ?>
-                        
+
                     <tr>
                         <td align="<?php echo $align_left ?>" inline-class="title" class="tnpc-row-edit tnpc-inline-editable"
                             data-type="title" data-id="<?php echo $post->ID ?>" dir="<?php echo $dir ?>">
@@ -97,18 +97,19 @@ $size = ['width' => 600, 'height' => 0];
                                 ?>
                         </td>
                     </tr>
-                    <tr>
-                        <td align="<?php echo $align_left ?>"
-                            inline-class="excerpt"
-                            class="tnpc-row-edit tnpc-inline-editable"
-                            data-type="text" data-id="<?php echo $post->ID ?>" dir="<?php echo $dir ?>">
+
+                    <?php if ($excerpt_length) { ?>
+                        <tr>
+                            <td align="<?php echo $align_left ?>" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable" data-type="text" data-id="<?php echo $post->ID ?>" dir="<?php echo $dir ?>">
                                 <?php
                                 echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $post->ID) ?
                                         TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $post->ID) :
                                         tnp_post_excerpt($post, $excerpt_length)
                                 ?>
-                        </td>
-                    </tr>
+                            </td>
+                        </tr>
+                    <?php } ?>
+
                     <?php if ($show_read_more_button) { ?>
                         <tr>
                             <td align="<?php echo $align_left ?>" inline-class="button">

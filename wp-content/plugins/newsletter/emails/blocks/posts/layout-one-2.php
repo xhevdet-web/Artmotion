@@ -104,17 +104,19 @@ $column_width = $total_width / 2 - 10;
                                     </tr>
                                 <?php } ?>
 
-                                <tr>
-                                    <td align="<?php echo $align_left ?>" dir="<?php echo $dir ?>">
-                                        <a href="<?php $url ?>" data-id="<?php echo $post->ID ?>" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable" data-type="text">
-                                            <?php
-                                            echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $post->ID) ?
-                                                    TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $post->ID) :
-                                                    tnp_post_excerpt($post, $excerpt_length)
-                                            ?>
-                                        </a>
-                                    </td>
-                                </tr>
+                                <?php if ($excerpt_length) { ?>
+                                    <tr>
+                                        <td align="<?php echo $align_left ?>" dir="<?php echo $dir ?>">
+                                            <a href="<?php $url ?>" data-id="<?php echo $post->ID ?>" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable" data-type="text">
+                                                <?php
+                                                echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $post->ID) ?
+                                                        TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $post->ID) :
+                                                        tnp_post_excerpt($post, $excerpt_length)
+                                                ?>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
 
                                 <?php if ($show_read_more_button) { ?>
                                     <tr>

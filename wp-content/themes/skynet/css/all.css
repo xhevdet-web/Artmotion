@@ -422,6 +422,24 @@ img {
   display: flex;
   justify-content: center;
 }
+.skynet_form_box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 30px;
+}
+.skynet_form_box h4 {
+  text-align: center;
+}
+.skynet_form_box input,
+.skynet_form_box textarea {
+  margin-bottom: 10px;
+}
+.skynet_form_box input[type="submit"] {
+  background: #04acf4;
+  color: white;
+  font-weight: bold;
+}
 /* END GENERAL ELEMENTS */
 /* TYPOGRAPHY */
 h1,
@@ -468,6 +486,22 @@ input {
   font-size: 16px;
   line-height: 24px;
   outline: none;
+}
+input,
+textarea {
+  width: 100%;
+  border: none;
+  background: #efefef;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  outline: none;
+}
+input.wpcf7-submit,
+textarea.wpcf7-submit {
+  background: #04acf4;
+  color: white;
+  font-weight: bold;
 }
 /* END TYPOGRAPHY */
 /* CONTENT ELEMENTS  */
@@ -627,22 +661,6 @@ input {
 }
 .contact_form_layout label {
   width: 100%;
-}
-.contact_form_layout input,
-.contact_form_layout textarea {
-  width: 100%;
-  border: none;
-  background: #efefef;
-  padding: 10px 15px;
-  border-radius: 20px;
-  margin-bottom: 20px;
-  outline: none;
-}
-.contact_form_layout input.wpcf7-submit,
-.contact_form_layout textarea.wpcf7-submit {
-  background: #04acf4;
-  color: white;
-  font-weight: bold;
 }
 .contact_map_section {
   height: 600px;

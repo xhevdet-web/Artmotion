@@ -1684,7 +1684,7 @@ class NewsletterModule {
      * @return TNP_User[]
      */
     function get_test_users() {
-        return $this->store->get_all(NEWSLETTER_USERS_TABLE, "where test=1");
+        return $this->store->get_all(NEWSLETTER_USERS_TABLE, "where test=1 and status in ('C', 'S')");
     }
 
     /**

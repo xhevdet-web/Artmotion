@@ -100,16 +100,18 @@ $column_width = $total_width / 2 - 20;
                     <?php } ?>
 
 
+                    <?php if ($excerpt_length) { ?>
+                        <tr>
+                            <td align="center" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable" data-type="text" data-id="<?php echo $row[0]->ID ?>">
+                                <?php
+                                echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $row[0]->ID) ?
+                                        TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $row[0]->ID) :
+                                        tnp_post_excerpt($row[0], $excerpt_length)
+                                ?>
+                            </td>
+                        </tr>
+                    <?php } ?>
 
-                    <tr>
-                        <td align="center" inline-class="excerpt" class="tnpc-row-edit tnpc-inline-editable" data-type="text" data-id="<?php echo $row[0]->ID ?>">
-                            <?php
-                            echo TNP_Composer::is_post_field_edited_inline($options['inline_edits'], 'text', $row[0]->ID) ?
-                                    TNP_Composer::get_edited_inline_post_field($options['inline_edits'], 'text', $row[0]->ID) :
-                                    tnp_post_excerpt($row[0], $excerpt_length)
-                            ?>
-                        </td>
-                    </tr>
                     <?php if ($show_read_more_button) { ?>
                         <tr>
                             <td align="center" inline-class="button">

@@ -4,7 +4,7 @@
   Plugin Name: Newsletter
   Plugin URI: https://www.thenewsletterplugin.com/plugins/newsletter
   Description: Newsletter is a cool plugin to create your own subscriber list, to send newsletters, to build your business. <strong>Before update give a look to <a href="https://www.thenewsletterplugin.com/category/release">this page</a> to know what's changed.</strong>
-  Version: 7.2.1
+  Version: 7.2.2
   Author: Stefano Lissa & The Newsletter Team
   Author URI: https://www.thenewsletterplugin.com
   Disclaimer: Use at your own risk. No warranty expressed or implied is provided.
@@ -35,7 +35,7 @@ if (version_compare(phpversion(), '5.6', '<')) {
     return;
 }
 
-define('NEWSLETTER_VERSION', '7.2.1');
+define('NEWSLETTER_VERSION', '7.2.2');
 
 global $newsletter, $wpdb;
 
@@ -260,6 +260,7 @@ class Newsletter extends NewsletterModule {
         }
 
         if ($this->action == 'test') {
+            // This response is tested, do not change it!
             echo 'ok';
             die();
         }
@@ -461,8 +462,9 @@ class Newsletter extends NewsletterModule {
     }
 
     function admin_menu() {
-        if (!$this->is_allowed())
+        if (!$this->is_allowed()) {
             return;
+        }
 
         add_menu_page('Newsletter', 'Newsletter', 'exist', 'newsletter_main_index', '', plugins_url('newsletter') . '/images/menu-icon.png', '30.333');
 
@@ -471,7 +473,9 @@ class Newsletter extends NewsletterModule {
 
         if (current_user_can('administrator')) {
             $this->add_menu_page('welcome', __('Welcome', 'newsletter'));
-            $this->add_menu_page('main', __('Settings and More', 'newsletter'));
+            $this->add_menu_page('main', __('Settings', 'newsletter'));
+            
+            // Pages not on menu
             $this->add_admin_page('smtp', 'SMTP');
             $this->add_admin_page('status', __('Status', 'newsletter'));
             $this->add_admin_page('delivery', __('Delivery Diagnostic', 'newsletter'));

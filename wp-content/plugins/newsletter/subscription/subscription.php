@@ -144,8 +144,7 @@ class NewsletterSubscription extends NewsletterModule {
 
                 $captcha = !empty($options_antibot['captcha']);
 
-
-                if (!empty($options_antibot['disabled']) || $this->antibot_form_check($captcha)) {
+                if (!empty($_GET['_wp_amp_action_xhr_converted']) || !empty($options_antibot['disabled']) || $this->antibot_form_check($captcha)) {
 
                     $subscription = $this->build_subscription();
 

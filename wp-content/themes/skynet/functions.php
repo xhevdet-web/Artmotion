@@ -157,9 +157,9 @@ function skynet_scripts() {
     wp_enqueue_script( 'skynet-particles', 'http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'skynet-stats', 'http://threejs.org/examples/js/libs/stats.min.js', array(), _S_VERSION, true );
     wp_enqueue_script( 'skynet-aosjs', 'https://unpkg.com/aos@2.3.1/dist/aos.js', array(), _S_VERSION, true );
-    wp_enqueue_script( 'skynet-jquery', get_template_directory_uri() . '/plugins/jquery/jquery-3.6.0.min.js', array(), _S_VERSION, true );
+    wp_enqueue_script( 'skynet-jquery', get_template_directory_uri() . '/plugins/jquery/jquery-3.6.0.min.js', array(), _S_VERSION, false );
 	wp_enqueue_script( 'skynet-poper', get_template_directory_uri() . '/plugins/popper/popper.min.js', array(), _S_VERSION, true );
-	wp_enqueue_script( 'skynet-bs4', get_template_directory_uri() . '/plugins/js/bootstrap.min.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'skynet-bs4', get_template_directory_uri() . '/plugins/js/bootstrap.min.js', array(), _S_VERSION, false );
 	wp_enqueue_script( 'skynet-slick', get_template_directory_uri() . '/plugins/slick/slick.min.js', array(), _S_VERSION, true );
 	wp_enqueue_script( 'skynet-main', get_template_directory_uri() . '/js/scripts.js', array(), _S_VERSION, true );
 
@@ -222,3 +222,70 @@ if (function_exists('acf_add_options_page')) {
 
 
 }
+
+
+
+add_action( 'wp_footer', 'my_ajax_without_file' );
+
+function my_ajax_without_file() { ?>
+
+    <script type="text/javascript" >
+        jQuery(document).ready(function($) {
+            $('#aplikim-form').on('submit',function (e) {
+                e.preventDefault();
+                ajaxurl = '<?php echo admin_url( 'admin-ajax.php' ) ?>'; // get ajaxurl
+
+                var data = {
+                    'action': 'add_post_from_frontend', // your action name
+                    'emri': $('#aplikim-form').find('input[name="emri"]').val(),
+                    'email': $('#aplikim-form').find('input[name="email"]').val(),
+                    'telefoni': $('#aplikim-form').find('input[name="telefoni"]').val(),
+                    'pozita': $('#aplikim-form').find('input[name="pozita"]').val(),
+                    'shkollimi': $('#aplikim-form').find('textarea[name="shkollimi"]').val(),
+                    'eksperiencat': $('#aplikim-form').find('textarea[name="eksperiencat"]').val()
+                };
+
+                jQuery.ajax({
+                    url: ajaxurl, // this will point to admin-ajax.php
+                    type: 'POST',
+                    data: data,
+                    success: function (response) {
+
+                        $('.alert-success').removeClass('d-none');
+                    },
+                    error : function (response) {
+                        $('.alert-error').removeClass('d-none');
+                    }
+                });
+            })
+        });
+    </script>
+    <?php
+}
+
+
+add_action("wp_ajax_add_post_from_frontend" , "add_post_from_frontend");
+add_action("wp_ajax_nopriv_add_post_from_frontend" , "add_post_from_frontend");
+
+function add_post_from_frontend(){
+
+    $new_post = array(
+        'post_title' => $_POST['emri'],
+        'post_content' => '',
+        'post_status' => 'private',
+        'post_type' => 'applications',
+    );
+
+    $pid = wp_insert_post($new_post);
+
+    update_post_meta($pid, 'emri_dhe_mbiemri', $_POST['emri']);
+    update_post_meta($pid, 'email', $_POST['email']);
+    update_post_meta($pid, 'telefoni', $_POST['telefoni']);
+    update_post_meta($pid, 'pozita', $_POST['pozita']);
+    update_post_meta($pid, 'shkollimi', $_POST['shkollimi']);
+    update_post_meta($pid, 'eksperiencat', $_POST['eksperiencat']);
+
+    echo json_encode($pid);
+    wp_die();
+}
+

@@ -461,6 +461,24 @@ img {
     }
   }
 }
+.skynet_form_box {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 6px;
+  padding: 15px;
+  margin-bottom: 30px;
+  h4 {
+    text-align: center;
+  }
+  input,textarea {
+    margin-bottom: 10px;
+  }
+  input[type="submit"]{
+    background: @primary;
+    color : white;
+    font-weight : bold;
+  }
+
+}
 
 /* END GENERAL ELEMENTS */
 
@@ -510,6 +528,20 @@ input {
   font-size: 16px;
   line-height: 24px;
   outline: none;
+}
+input,textarea {
+  width: 100%;
+  border : none;
+  background: #efefef;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  outline: none;
+  &.wpcf7-submit {
+    background: @primary;
+    color : white;
+    font-weight: bold;
+  }
 }
 
 /* END TYPOGRAPHY */
@@ -679,20 +711,6 @@ input {
   }
   label {
     width: 100%;
-  }
-  input,textarea {
-    width: 100%;
-    border : none;
-    background: #efefef;
-    padding: 10px 15px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-    outline: none;
-    &.wpcf7-submit {
-      background: @primary;
-      color : white;
-      font-weight: bold;
-    }
   }
 }
 .contact_map_section {

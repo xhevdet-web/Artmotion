@@ -1,8 +1,8 @@
 === Newsletter ===
 Tags: newsletter, email marketing, welcome email, signup forms, contact, lead generation, marketing automation
 Requires at least: 3.4.0
-Tested up to: 5.7.2
-Stable tag: 7.2.1
+Tested up to: 5.8
+Stable tag: 7.2.2
 Requires PHP: 5.6
 Contributors: satollo,webagile,michael-travan
 License: GPLv2 or later
@@ -120,6 +120,13 @@ Thank you, The Newsletter Team
 
 == Changelog ==
 
+= 7.2.2 =
+
+* [COMPOSER] Posts block excerpt removed when set to 0-length
+* Added special characters on test message
+* Added more specific error for action calls on System/Status panel
+* Check for the _wp_amp_action_xhr_converted parameter by AMP plugin
+
 = 7.2.1 =
 
 * Added more detailed admin logging
@@ -130,9 +137,9 @@ Thank you, The Newsletter Team
 * Fixed activation email on profile change
 * Extended year selection on newsletter scheduling
 * [DELIVERY] Breaking change: old enqueue() and flush() methods have been removed
-* Fixed alert message on some buttons
-* Fixed error message on multiple subscriptions (when not allowed)
-* Fixed erratic error log line on main log
+* [GENERAL] Fixed alert message on some buttons
+* [SUBSCRIPTION] Fixed error message on multiple subscriptions (when not allowed)
+* [GENERAL] Fixed erratic error log line on main log
 
 = 7.1.9 =
 
@@ -145,11 +152,11 @@ Thank you, The Newsletter Team
 
 = 7.1.8 =
 
-* Fixed alignment of single big image on Outlook Android
+* [COMPOSER] Fixed alignment of single big image on Outlook Android
 
 = 7.1.7 =
 
-* Fix of permalink onm email with multilanguage plugins
+* [GENERAL] Fix of permalink onm email with multilanguage plugins
 
 = 7.1.6 =
 

@@ -16,6 +16,7 @@ $email = null;
 if ($controls->is_action()) {
 
     if ($controls->is_action('save_preset')) {
+        $this->admin_logger->info('Saving new preset: ' . $controls->data['subject']);
         // Create new preset email
         $email = new stdClass();
         TNP_Composer::update_email($email, $controls);
@@ -23,13 +24,6 @@ if ($controls->is_action()) {
         $email->editor = NewsletterEmails::EDITOR_COMPOSER;
         $email->subject = $module->sanitize_preset_name($controls->data['subject']);
         $email->message = $controls->data['message'];
-
-        //Save Global Style options
-        foreach ($controls->data as $name => $value) {
-            if (strpos($name, 'options_composer_') === 0) {
-                $email->options[substr($name, 8)] = $value;
-            }
-        }
 
         $email = Newsletter::instance()->save_email($email);
 
@@ -40,7 +34,7 @@ if ($controls->is_action()) {
     }
 
     if ($controls->is_action('update_preset') && !empty($_POST['preset_id'])) {
-
+        $this->admin_logger->info('Updating preset ' . $_POST['preset_id']);
         $email = Newsletter::instance()->get_email((int) $_POST['preset_id']);
         TNP_Composer::update_email($email, $controls);
 
@@ -48,21 +42,13 @@ if ($controls->is_action()) {
             $email->subject = $module->sanitize_preset_name($controls->data['subject']);
         }
 
+        // We store only the blocks, after the TNP_Composer::update_email(...) call we have the full HTML
         $email->message = $controls->data['message'];
 
         $email = Newsletter::instance()->save_email($email);
 
-        //Save Global Style options
-        foreach ($controls->data as $name => $value) {
-            if (strpos($name, 'options_composer_') === 0) {
-                $email->options[substr($name, 8)] = $value;
-            }
-        }
-
         $redirect = $module->get_admin_page_url('composer');
         $controls->js_redirect($redirect);
-
-        return;
     }
 
 
@@ -106,7 +92,6 @@ if ($controls->is_action()) {
 
     $controls->js_redirect($redirect . '&id=' . $email->id);
 
-    return;
 } else {
 
     if (!empty($_GET['id'])) {
